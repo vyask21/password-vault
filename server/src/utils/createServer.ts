@@ -8,7 +8,11 @@ import cookie from "@fastify/cookie";
 import userRoutes from "../modules/user/user.routes";
 import vaultRoutes from "../modules/vault/vault.route";
 
-
+declare module "fastify"{
+    export interface FastifyInstance{
+        authenticate: any;
+    }
+}
 function createServer(){
 
     const app = fastify()
